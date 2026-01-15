@@ -1,0 +1,70 @@
+{
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product",
+    "description": "Product catalog (no prices seeded)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": ["images"]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
+    },
+    "subcategory": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category"
+    },
+    "productType": {
+      "type": "enumeration",
+      "enum": ["clothing", "set", "item"],
+      "required": true
+    },
+    "sizes": {
+      "type": "json",
+      "description": "Array of available sizes. Examples: [\"PP\",\"P\",\"M\",\"G\",\"GG\",\"26\",\"27\"]"
+    },
+    "available": {
+      "type": "boolean",
+      "default": true
+    },
+    "showQuantity": {
+      "type": "boolean",
+      "default": false
+    },
+    "quantity": {
+      "type": "integer"
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "minWholesaleQty": {
+      "type": "integer",
+      "default": 6,
+      "description": "Default minimum for clothing and sets; admin can override"
+    }
+  }
+}
