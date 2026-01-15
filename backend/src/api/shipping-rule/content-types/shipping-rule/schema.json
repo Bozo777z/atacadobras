@@ -1,0 +1,27 @@
+{
+  "collectionName": "shipping_rules",
+  "info": {
+    "singularName": "shipping-rule",
+    "pluralName": "shipping-rules",
+    "displayName": "Shipping Rule"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "state": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "description": "UF (e.g., SP, RJ)"
+    },
+    "shippingPrice": {
+      "type": "decimal",
+      "default": 0
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
