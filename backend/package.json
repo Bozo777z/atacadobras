@@ -1,0 +1,15 @@
+{
+  "name": "kids-wholesale-strapi",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build"
+  },
+  "dependencies": {
+    "@strapi/plugin-users-permissions": "4.x",
+    "pg": "^8.10.0",
+    "strapi": "4.x"
+  }
+}
