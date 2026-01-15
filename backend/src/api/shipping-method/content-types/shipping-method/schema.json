@@ -1,0 +1,34 @@
+{
+  "collectionName": "shipping_methods",
+  "info": {
+    "singularName": "shipping-method",
+    "pluralName": "shipping-methods",
+    "displayName": "Shipping Method"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": ["correios", "carrier", "local_delivery"],
+      "required": true
+    },
+    "availableStates": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::shipping-rule.shipping-rule"
+    },
+    "estimatedDays": {
+      "type": "integer"
+    },
+    "active": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
