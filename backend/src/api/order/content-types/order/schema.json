@@ -1,0 +1,48 @@
+{
+  "collectionName": "orders",
+  "info": {
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "Order"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "customerName": {
+      "type": "string"
+    },
+    "customerEmail": {
+      "type": "string"
+    },
+    "customerPhone": {
+      "type": "string"
+    },
+    "items": {
+      "type": "json",
+      "description": "Array of items { productId, name, productType, size, qty }"
+    },
+    "subtotal": {
+      "type": "decimal"
+    },
+    "shipping": {
+      "type": "json"
+    },
+    "total": {
+      "type": "decimal"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": ["pending", "paid", "cancelled", "processing"],
+      "default": "pending"
+    },
+    "paymentMethod": {
+      "type": "string",
+      "description": "e.g., pix_sunize (skeleton)"
+    },
+    "pixPayload": {
+      "type": "json",
+      "description": "Placeholder for PIX payment data (Sunize integration skeleton)"
+    }
+  }
+}
